@@ -1,0 +1,858 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.33,0.33}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.33,0.33}{\underline{#1}}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{\textbf{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.44,0.26,0.76}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.14,0.16,0.18}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.14,0.16,0.18}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.44,0.26,0.76}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.89,0.38,0.04}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{1.00,0.33,0.33}{#1}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+% Preámbulo
+\usepackage{comment}
+\usepackage{marvosym}
+\usepackage{float} % Para controlar la posición de las tablas y figuras
+\usepackage{makeidx}
+
+\usepackage{mathptmx}
+\usepackage{amsmath} % Para utilizar símbolos matemáticos y ecuaciones
+\usepackage{setspace}
+\usepackage{lipsum} % Crear texto RAMDOM
+\usepackage{multirow} % Agregar TABLAS 
+\usepackage{array} % Dar formato a las TABLAS
+
+
+\usepackage{booktabs} % Para crear tablas bonitas
+\usepackage{caption} % Para personalizar las leyendas de las tablas y figuras
+\usepackage{hyperref} % Para crear enlaces dentro del documento
+
+%Para figuras
+\usepackage{graphicx} % Para incluir imágenes
+\usepackage{subcaption} % Insertar SubImagenes
+\usepackage{tikz} % Para generar gráficos
+\usepackage{pgfplots} % Para generar gráficos en LaTeX
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Tabla de contenidos}
+\else
+  \newcommand\contentsname{Tabla de contenidos}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Listado de Figuras}
+\else
+  \newcommand\listfigurename{Listado de Figuras}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Listado de Tablas}
+\else
+  \newcommand\listtablename{Listado de Tablas}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figura}
+\else
+  \newcommand\figurename{Figura}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tabla}
+\else
+  \newcommand\tablename{Tabla}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listado}
+\newcommand*\listoflistings{\listof{codelisting}{Listado de Listados}}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{example}{Ejemplo}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}[chapter]
+\theoremstyle{remark}
+\renewcommand*{\proofname}{Prueba}
+\newtheorem*{remark}{Observación}
+\newtheorem*{solution}{Solución}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{spanish}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{biblatex}
+\addbibresource{references.bib}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+% Make links footnotes instead of hotlinks:
+\DeclareRobustCommand{\href}[2]{#2\footnote{\url{#1}}}
+\hypersetup{
+  pdftitle={investigacion operativa},
+  pdfauthor={Edison Achalma},
+  pdflang={es},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{investigacion operativa}
+\author{Edison Achalma}
+\date{1/8/23}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, frame hidden, enhanced, sharp corners, interior hidden, breakable]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Tabla de contenidos}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\bookmarksetup{startatroot}
+
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
+\addcontentsline{toc}{chapter}{Preface}
+
+\markboth{Preface}{Preface}
+
+This is a Quarto book.
+
+To learn more about Quarto books visit
+\url{https://quarto.org/docs/books}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{+} \DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 2
+\end{verbatim}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{introduction}{%
+\chapter*{Introduction}\label{introduction}}
+\addcontentsline{toc}{chapter}{Introduction}
+
+\markboth{Introduction}{Introduction}
+
+This is a book created from markdown and executable code.
+
+See \textcite{knuth84} for additional discussion of literate
+programming.
+
+La investigación operativa es una disciplina que se enfoca en el
+análisis y resolución de problemas de optimización en diferentes
+ámbitos, tales como la empresa, la industria y el gobierno. Esta
+disciplina se basa en el uso de métodos matemáticos y estadísticos para
+encontrar la solución óptima a un problema específico, teniendo en
+cuenta diferentes factores y restricciones.
+
+Para aprender investigación operativa, es importante tener conocimientos
+básicos de matemáticas, especialmente en áreas como álgebra y cálculo.
+También es útil conocer algoritmos y estructuras de datos, así como
+tener habilidades de programación para poder implementar y probar
+soluciones.
+
+El proceso de aprendizaje de investigación operativa suele incluir la
+exposición a diferentes tipos de problemas y el análisis de cómo se
+pueden resolver de manera óptima. También se pueden estudiar métodos y
+técnicas específicas, como programación lineal, programación no lineal,
+teoría de colas y teoría de juegos.
+
+Además de los conocimientos teóricos, es importante desarrollar
+habilidades prácticas en la resolución de problemas, lo que incluye la
+identificación de las variables y restricciones relevantes, la
+formulación de un modelo matemático y la implementación de una solución.
+La investigación operativa también implica la toma de decisiones y la
+evaluación de diferentes escenarios y alternativas, por lo que es
+importante desarrollar habilidades de análisis y pensamiento crítico.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{summary}{%
+\chapter*{Summary}\label{summary}}
+\addcontentsline{toc}{chapter}{Summary}
+
+\markboth{Summary}{Summary}
+
+In summary, this book has no content whatsoever.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{+} \DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 2
+\end{verbatim}
+
+\part{Capítulos}
+
+\hypertarget{introducciuxf3n-a-la-investigaciuxf3n-operativa}{%
+\chapter{Introducción a la investigación
+operativa}\label{introducciuxf3n-a-la-investigaciuxf3n-operativa}}
+
+\leavevmode\vadjust pre{\hypertarget{def-io}{}}%
+\begin{definition}[Investigacion de operaciones]\label{def-io}
+
+La Investigación de Operaciones es una disciplina que se ocupa del
+estudio y análisis de sistemas de producción y servicios. Su objetivo es
+encontrar las mejores soluciones posibles a los problemas que surgen en
+la toma de decisiones en dichos sistemas. La disciplina se originó
+durante la Segunda Guerra Mundial, cuando se necesitaba optimizar la
+producción de material bélico y mejorar la eficiencia logística. Desde
+entonces, ha tenido un papel importante en la mejora de la productividad
+y la eficiencia en diversos campos, como la manufactura, la ingeniería,
+la logística, la finanzas, la salud y la educación, entre otros:
+
+\end{definition}
+
+La Investigación de Operaciones (IO) es un campo de la matemática y la
+informática que se dedica a la resolución de problemas prácticos
+mediante el uso de modelos matemáticos y algoritmos. Estos problemas
+pueden ser de diversa índole, tales como la optimización de recursos en
+una empresa, el diseño de un plan de producción eficiente, la gestión de
+inventarios, entre otros. La IO utiliza técnicas formales para analizar
+y resolver estos problemas de manera óptima y eficiente.
+
+\hypertarget{tuxe9cnicas-y-aplicaciones-de-la-io}{%
+\section{Técnicas y aplicaciones de la
+IO}\label{tuxe9cnicas-y-aplicaciones-de-la-io}}
+
+La Investigación de operaciones (IO) es una disciplina que se ocupa del
+estudio y análisis de sistemas complejos y procesos de decisión en
+diversos contextos, con el objetivo de mejorar su eficiencia y
+efectividad. Para ello, se utilizan diversas técnicas y herramientas
+matemáticas y estadísticas. Algunas de las técnicas más comunes en la IO
+son:
+
+\begin{itemize}
+\tightlist
+\item
+  Programación lineal: permite optimizar una función objetivo, sujeta a
+  un conjunto de restricciones, mediante el uso de técnicas de
+  optimización matemática.
+\item
+  Análisis de transporte: se utiliza para determinar la forma más
+  eficiente de mover un producto o material desde un origen hasta un
+  destino, minimizando costos de transporte.
+\item
+  Programación dinámica: permite modelar y resolver problemas que
+  involucran decisiones a lo largo del tiempo, considerando factores
+  como el costo y la incertidumbre.
+\item
+  Simulación: es una técnica que permite evaluar el comportamiento de un
+  sistema o proceso a través de la repetición de escenarios hipotéticos.
+\item
+  Teoría de colas: se utiliza para modelar y analizar sistemas de
+  atención y espera, como por ejemplo, una fila de personas esperando
+  ser atendidas en una institución bancaria.
+\end{itemize}
+
+Algunas de las aplicaciones de la IO son:
+
+\begin{itemize}
+\tightlist
+\item
+  Diseño y gestión de sistemas de producción y distribución.
+\item
+  Diseño y optimización de sistemas de transporte y logística.
+\item
+  Gestión de inventarios y suministros.
+\item
+  Diseño y gestión de sistemas de atención y servicio al cliente.
+\item
+  Gestión de proyectos y programas.
+\item
+  Diseño y optimización de sistemas de información y tecnología.
+\end{itemize}
+
+\hypertarget{fundamentos-de-uxe1lgebra-matricial}{%
+\section{Fundamentos de álgebra
+matricial}\label{fundamentos-de-uxe1lgebra-matricial}}
+
+Los fundamentos de álgebra matricial son un conjunto de conceptos y
+herramientas matemáticas que se utilizan para trabajar con matrices, es
+decir, arreglos de números dispuestos en filas y columnas. Algunos de
+los conceptos fundamentales de álgebra matricial son:
+
+\begin{itemize}
+\item
+  Suma y resta de matrices: para sumar o restar dos matrices, deben
+  tener la misma dimensión (es decir, el mismo número de filas y
+  columnas). Se realiza elemento por elemento, es decir, se suman o
+  restan los elementos correspondientes de cada matriz.
+\item
+  Multiplicación de una matriz por un escalar: para multiplicar una
+  matriz por un escalar (un número), se multiplican todos los elementos
+  de la matriz por ese escalar.
+\item
+  Multiplicación de matrices: para multiplicar dos matrices, deben
+  cumplirse ciertas condiciones. La matriz resultante tendrá tantas
+  filas como la primera matriz y tantas columnas como la segunda. El
+  elemento ij-ésimo de la matriz resultante se obtiene multiplicando
+  cada elemento de la i-ésima fila de la primera matriz por el elemento
+  correspondiente de la j-ésima columna de la segunda matriz, y sumando
+  todos esos productos.
+\item
+  Transpuesta de una matriz: la transpuesta de una matriz A es una
+  matriz A\^{}T que se obtiene intercambiando filas por columnas en A.
+\item
+  Matriz inversa: una matriz inversa es una matriz A\^{}(-1) que, al
+  multiplicarla por la matriz A original, da como resultado la matriz
+  identidad.
+\item
+  Determinante de una matriz: el determinante de una matriz es un número
+  que se puede calcular a partir de los elementos de la matriz y que
+  tiene ciertas propiedades. Por ejemplo, si el determinante de una
+  matriz es cero, la matriz no tiene inversa.
+\end{itemize}
+
+\hypertarget{matriz-inversa-seguxfan-el-muxe9todo-de-gauss}{%
+\section{Matriz inversa según el método de
+Gauss}\label{matriz-inversa-seguxfan-el-muxe9todo-de-gauss}}
+
+Para obtener la matriz inversa de una matriz A mediante el método de
+Gauss, se puede seguir el siguiente proceso:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Escribir la matriz A junto con la matriz identidad (I) de tamaño igual
+  a la matriz A. Esto se conoce como la matriz aumentada (A\textbar I).
+\item
+  Aplicar las operaciones elementales necesarias para convertir la
+  matriz A en la matriz diagonal (en la que sólo hay elementos distintos
+  de cero en la diagonal principal). Estas operaciones deben aplicarse
+  también a la matriz identidad para mantener la relación entre ambas.
+\item
+  Una vez que se ha obtenido la matriz diagonal, se puede obtener la
+  matriz inversa aplicando las mismas operaciones elementales a la
+  matriz identidad, pero en orden inverso y con los coeficientes
+  cambiados de signo.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Para calcular la matriz inversa de una matriz A en R, puedes utilizar la }
+\CommentTok{\# función solve() de la siguiente manera:}
+\CommentTok{\# Primero, debes cargar la matriz A}
+
+\NormalTok{A }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
+\CommentTok{\# A}
+\CommentTok{\# Luego, puedes calcular la inversa de A utilizando solve()}
+
+\NormalTok{A\_inv }\OtherTok{\textless{}{-}} \FunctionTok{solve}\NormalTok{(A)}
+\CommentTok{\# A\_inv}
+
+\CommentTok{\# También puedes utilizar la función ginv() del paquete MASS, que utiliza el }
+\CommentTok{\# método de Moore{-}Penrose para calcular la inversa generalizada de una matriz:}
+
+\CommentTok{\# Primero, debes cargar la matriz A y el paquete MASS}
+
+\NormalTok{A }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(MASS)}
+
+\CommentTok{\# Luego, puedes calcular la inversa de A utilizando ginv()}
+\NormalTok{A\_inv }\OtherTok{\textless{}{-}} \FunctionTok{ginv}\NormalTok{(A)}
+\end{Highlighting}
+\end{Shaded}
+
+\leavevmode\vadjust pre{\hypertarget{exm-ejemplo1}{}}%
+\begin{example}[]\label{exm-ejemplo1}
+
+Para obtener la matriz inversa de A.
+
+\begin{equation*}
+A_{2 \times 2}=
+\begin{pmatrix}
+1 & 2 \\
+3 & 4 
+\end{pmatrix} _{2 \times 2}
+\end{equation*}
+
+Se puede seguir el siguiente proceso:
+
+La matriz aumentada es A\textbar I =
+
+\begin{equation*}
+A_{2 \times 2}=
+\begin{pmatrix}
+1 & 2 & 1 & 0 \\
+3 & 4 & 0 & 1 
+\end{pmatrix} _{2 \times 2}
+\end{equation*}
+
+Aplicar una operación elemental de intercambio de filas para convertir
+el primer elemento de la matriz A en 1:
+
+\begin{equation*}
+A_{2 \times 2}=
+\begin{pmatrix}
+3 & 4 & 0 & 1 \\
+1 & 2 & 1 & 0 
+\end{pmatrix} _{2 \times 2}
+\end{equation*}
+
+Aplicar una operación elemental de multiplicación de fila por un escalar
+para que el primer elemento de la segunda fila sea -1:
+
+\begin{equation*}
+A_{2 \times 2}=
+\begin{pmatrix}
+3 & 4 & 0 & 1 \\
+-1 & -2 & -1 & 0 
+\end{pmatrix} _{2 \times 2}
+\end{equation*}
+
+Aplicar una operación elemental de suma de filas para eliminar el primer
+elemento de la segunda fila:
+
+\begin{equation*}
+A_{2 \times 2}=
+\begin{pmatrix}
+3 & 4 & 0 & 1 \\
+0 & 0 & 0 & 1 
+\end{pmatrix} _{2 \times 2}
+\end{equation*}
+
+Aplicar las operaciones elementales necesarias a la matriz identidad
+para obtener la matriz inversa:
+
+\begin{equation*}
+A_{2 \times 2}=
+\begin{pmatrix}
+1/3 & -2/3 & 0 & -1/3 \\
+0 & 0 & 0 & 1 
+\end{pmatrix} _{2 \times 2}
+\end{equation*}
+
+Por tanto, la matriz inversa de A es:
+
+\begin{equation*}
+A_{2 \times 2}=
+\begin{pmatrix}
+1/3 & -2/3 \\
+0 & 1 
+\end{pmatrix} _{2 \times 2}
+\end{equation*}
+
+\end{example}
+
+\hypertarget{optmizaciuxf3n-lineal-contuxednua}{%
+\chapter{Optmización lineal
+contínua}\label{optmizaciuxf3n-lineal-contuxednua}}
+
+La optimización lineal contínua es una técnica matemática que se utiliza
+para encontrar el valor óptimo de una función lineal sujeta a ciertas
+restricciones o condiciones. Esta técnica se aplica a problemas que
+involucran variables que pueden tomar cualquier valor en un rango
+específico, en lugar de solo valores discretos. Los problemas de
+optimización lineal contínua se pueden resolver utilizando diferentes
+métodos, como el método simplex o el algoritmo de punto interior. La
+optimización lineal contínua se utiliza en diversas áreas, como la
+ingeniería, la economía y la ciencia de la computación.
+
+\hypertarget{modelo-general-de-programaciuxf3n-lineal-pl}{%
+\section{Modelo general de Programación Lineal
+(PL)}\label{modelo-general-de-programaciuxf3n-lineal-pl}}
+
+La Programación Lineal (PL) es una técnica de optimización que se
+utiliza para encontrar el valor óptimo de una función de varias
+variables (llamada función objetivo) sujeta a un conjunto de
+restricciones. En el modelo general de PL, la función objetivo y las
+restricciones están expresadas mediante ecuaciones o inecuaciones que
+involucran una combinación lineal de las variables. La solución del
+problema de PL consiste en encontrar los valores de las variables que
+optimizan la función objetivo, sujeto a cumplir con las restricciones.
+
+El modelo general de Programación Lineal (PL) puede ser representado de
+la siguiente manera en LaTeX:
+
+\hypertarget{variables-de-decisiuxf3n}{%
+\section{Variables de decisión}\label{variables-de-decisiuxf3n}}
+
+\hypertarget{funciuxf3n-objetivo}{%
+\section{Función Objetivo}\label{funciuxf3n-objetivo}}
+
+\hypertarget{restricciones}{%
+\section{Restricciones}\label{restricciones}}
+
+\hypertarget{formulaciuxf3n-de-modelos-de-pl}{%
+\section{Formulación de modelos de
+PL}\label{formulaciuxf3n-de-modelos-de-pl}}
+
+\hypertarget{algunos-casos-de-estudios-cluxe1sicos}{%
+\section{Algunos casos de estudios
+clásicos}\label{algunos-casos-de-estudios-cluxe1sicos}}
+
+\hypertarget{muxe9todo-gruxe1fico}{%
+\section{Método Gráfico}\label{muxe9todo-gruxe1fico}}
+
+problema en forma estándar
+
+\begin{align}
+& \text{Maximizar Z} & & 50x_1 + 56x_2 \\
+& \text{Sujeto a}    & & x_1 + x_2 \leq 80 \\
+&                    & & 3x_1 + 2x_2 \leq 220 \\
+&                    & & 2x_1 + 3x_2 \leq 210 \\
+&                    & & x_1, x_2 \geq 0
+\end{align}
+
+Representar gráficamente las restricciones
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=0, xmax=80,
+    ymin=0, ymax=140,
+    xtick={0,40,80},
+    ytick={0,80,120,140},
+    xlabel={$x_1$},
+    ylabel={$x_2$}
+]
+\addplot[domain=0:80, samples=2, thick, blue]{80-x};
+\addplot[domain=0:80, samples=2, thick, red]{(220-3*x)/2};
+\addplot[domain=0:80, samples=2, thick, green]{(210-2*x)/3};
+\end{axis}
+\end{tikzpicture}
+
+Identificar el conjunto solución factible.
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xmin=0, xmax=80,
+    ymin=0, ymax=140,
+    xtick={0,40,80},
+    ytick={0,80,120,140},
+    xlabel={$x_1$},
+    ylabel={$x_2$},
+    fill=gray, opacity=0.3
+]
+\addplot[domain=0:40, samples=2, thick, blue]{80-x};
+\addplot[domain=40:80, samples=2, thick, blue]{120-3*x/2};
+\addplot[domain=0:60, samples=2, thick, red]{(220-3*x)/2};
+\addplot[domain=60:80, samples=2, thick, red]{(210-2*x)/3};
+\addplot[domain=0:80, samples=2, thick, green]{(210-2*x)/3};
+\filldraw[green] (0,80) -- (40,120) -- (60,80) -- cycle;
+\end{axis}
+\end{tikzpicture}
+
+Identificar los puntos extremos del conjunto solución factible.
+
+\begin{tikzpicture}
+\begin{axis}[    axis lines=middle,    xmin=0, xmax=80,    ymin=0, ymax=140,    xtick={0,40,80},    ytick={0,80,120,140},    xlabel={$x_1$},    ylabel={$x_2$},    fill=gray, opacity=0.3]
+\addplot[domain=0:40, samples=2, thick, blue]{80-x};
+\addplot[domain=40:80, samples=2, thick, blue]{120-3*x/2};
+\addplot[domain=0:60, samples=2, thick, red]{(220-3*x)/2};
+\addplot[domain=60:80, samples=2, thick, red]{(210-2*x)/3};
+\addplot[domain=0:80, samples=2, thick, green]{(210-2*x)/3};
+\filldraw[green] (0,80) -- (40,120) -- (60,80) -- cycle;
+\draw[black,dashed] (0,80) -- (40,120) -- (60,80);
+\draw[black,dashed] (0,80) -- (60,80);
+\draw[black,dashed] (40,120) -- (60,80);
+\filldraw[black] (0,80) circle (2pt);
+\filldraw[black] (40,120) circle (2pt);
+\filldraw[black] (60,80) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+
+\hypertarget{casos-especiales-del-muxe9todo-gruxe1fico}{%
+\subsection{Casos Especiales del Método
+Gráfico}\label{casos-especiales-del-muxe9todo-gruxe1fico}}
+
+\hypertarget{ejercicios-de-aplicaciuxf3n}{%
+\section{Ejercicios de aplicación}\label{ejercicios-de-aplicaciuxf3n}}
+
+\hypertarget{problemas-de-transporte-y-de-asignaciuxf3n}{%
+\chapter{Problemas de transporte y de
+asignación}\label{problemas-de-transporte-y-de-asignaciuxf3n}}
+
+\hypertarget{muxe9todo-simplex}{%
+\section{Método Simplex}\label{muxe9todo-simplex}}
+
+\hypertarget{procedimiento-del-muxe9todo-simplex}{%
+\subsection{Procedimiento del Método
+simplex}\label{procedimiento-del-muxe9todo-simplex}}
+
+\hypertarget{pasos-para-aplicar-muxe9todo-simplex}{%
+\subsection{pasos para aplicar método
+simplex}\label{pasos-para-aplicar-muxe9todo-simplex}}
+
+\hypertarget{tablero-simplex}{%
+\subsection{tablero Simplex}\label{tablero-simplex}}
+
+\hypertarget{formas-de-presentaciuxf3n-de-un-programa-lineal}{%
+\subsection{formas de presentación de un programa
+lineal}\label{formas-de-presentaciuxf3n-de-un-programa-lineal}}
+
+\hypertarget{forma-canuxf3nica-y-estuxe1ndar}{%
+\subsection{forma canónica y
+estándar}\label{forma-canuxf3nica-y-estuxe1ndar}}
+
+\hypertarget{variables-de-exceso-surplus-y-holgura-slack}{%
+\subsection{variables de exceso (Surplus) y Holgura
+(Slack)}\label{variables-de-exceso-surplus-y-holgura-slack}}
+
+\hypertarget{aplicaciones-con-excel-y-lindo}{%
+\subsection{aplicaciones con Excel y
+lindo}\label{aplicaciones-con-excel-y-lindo}}
+
+\hypertarget{soluciones-iniciales-muxe9todo-de-dos-fases-y-coeficiente-de-castigo}{%
+\section{Soluciones iniciales Método de dos fases y Coeficiente de
+castigo}\label{soluciones-iniciales-muxe9todo-de-dos-fases-y-coeficiente-de-castigo}}
+
+\hypertarget{rompimiento-de-empates-en-el-muxe9todo-simplex}{%
+\subsection{Rompimiento de empates en el método
+simplex}\label{rompimiento-de-empates-en-el-muxe9todo-simplex}}
+
+\hypertarget{otros-muxe9todos-de-soluciuxf3n}{%
+\subsection{Otros métodos de
+solución}\label{otros-muxe9todos-de-soluciuxf3n}}
+
+\hypertarget{anuxe1lisis-de-la-soluciuxf3n-uxf3ptima}{%
+\section{Análisis de la solución
+óptima}\label{anuxe1lisis-de-la-soluciuxf3n-uxf3ptima}}
+
+\hypertarget{definiciuxf3n-anuxe1lisis-de-sensibilidad}{%
+\subsection{Definición análisis de
+sensibilidad}\label{definiciuxf3n-anuxe1lisis-de-sensibilidad}}
+
+\hypertarget{definiciuxf3n-del-modelo-dual}{%
+\subsection{Definición del modelo
+dual}\label{definiciuxf3n-del-modelo-dual}}
+
+\hypertarget{procedimiento-de-conversiuxf3n-primal--dual}{%
+\subsection{Procedimiento de Conversión Primal-
+Dual}\label{procedimiento-de-conversiuxf3n-primal--dual}}
+
+\hypertarget{relaciones-del-primal-dual}{%
+\subsection{relaciones del
+Primal-Dual}\label{relaciones-del-primal-dual}}
+
+\hypertarget{interpretaciuxf3n-econuxf3mica-del-dual}{%
+\subsection{Interpretación económica del
+dual}\label{interpretaciuxf3n-econuxf3mica-del-dual}}
+
+\hypertarget{cambios-en-los-coeficientes-de-la-funciuxf3n-objetivo.}{%
+\subsection{Cambios en los coeficientes de la función
+objetivo.}\label{cambios-en-los-coeficientes-de-la-funciuxf3n-objetivo.}}
+
+\hypertarget{cambios-en-los-lados-derechos-de-las-restricciones}{%
+\subsection{Cambios en los lados derechos de las
+restricciones}\label{cambios-en-los-lados-derechos-de-las-restricciones}}
+
+\hypertarget{ejercicios-de-aplicaciuxf3n-1}{%
+\subsection{Ejercicios de
+aplicación}\label{ejercicios-de-aplicaciuxf3n-1}}
+
+\hypertarget{aplicaciones-con-excel-y-lindo-1}{%
+\subsection{Aplicaciones con Excel y
+lindo}\label{aplicaciones-con-excel-y-lindo-1}}
+
+\hypertarget{optimizacion-lineal-entera}{%
+\chapter{Optimizacion lineal entera}\label{optimizacion-lineal-entera}}
+
+\hypertarget{optimizacion-no-lineal-continua}{%
+\chapter{Optimizacion no lineal
+continua}\label{optimizacion-no-lineal-continua}}
+
+\hypertarget{problemas-de-inventario}{%
+\chapter{Problemas de inventario}\label{problemas-de-inventario}}
+
+\hypertarget{teoria-de-colas-o-fenomenos-de-espera}{%
+\chapter{Teoria de colas o fenomenos de
+espera}\label{teoria-de-colas-o-fenomenos-de-espera}}
+
+\hypertarget{acknowledgments}{%
+\section{Acknowledgments}\label{acknowledgments}}
+
+I am grateful for the insightful comments offered by the anonymous peer
+reviewers at Books \& Texts. The generosity and expertise of one and all
+have improved this study in innumerable ways and saved me from many
+errors; those that inevitably remain are entirely my own responsibility.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{references}{%
+\chapter*{References}\label{references}}
+\addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{0}{0}
+\end{CSLReferences}
+
+\appendix
+\addcontentsline{toc}{part}{Apéndices}
+
+
+\printbibliography[title=apendice]
+
+
+\end{document}

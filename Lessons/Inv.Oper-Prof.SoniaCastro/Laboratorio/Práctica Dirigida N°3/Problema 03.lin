@@ -1,0 +1,33 @@
+7.1,1,0,1000,"(untitled)"
+"POM for Windows 3..1 Build 41"
+1,2,0,0,0,0,0
+0,1,0,0,1,0,0
+4,#FALSE#,0,0,0,0,0,0
+7,6
+""
+"X1"
+"X2"
+"X3"
+"X4"
+" "
+"RHS"
+"Minimize"
+"N° tamaño de pedido de cortadoras normales"
+"N° tamaño de pedido de cortadoras grandes"
+"Hrs. hombre en la fase de ensamblaje"
+"Hrs. hombre en la fase de afinamiento"
+"Hrs. hombre en la fase de acabado"
+"Eq. de producción y cant. adquirida por cort. normal "
+"Eq. de producción y cant. adquirida por cort. grande"
+6
+Minimize, 0  250  500  150  600  0  0 
+N° tamaño de pedido de cortadoras normales, 0  1  0  1  0  3  1500 
+N° tamaño de pedido de cortadoras grandes, 0  0  1  0  1  3  1800 
+Hrs. hombre en la fase de ensamblaje, 0  1.5  2.5  0  0  1  5750 
+Hrs. hombre en la fase de afinamiento, 0  1.2  2  0  0  1  7000 
+Hrs. hombre en la fase de acabado, 0  2.5  3  0  0  1  7500 
+Eq. de producción y cant. adquirida por cort. normal , 0  1  0 -1  0  3  0 
+Eq. de producción y cant. adquirida por cort. grande, 0  0  1  0 -1  3  0 
+-1,-1
+"done"
+""

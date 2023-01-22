@@ -1,0 +1,85 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Investigacion operativa"
+  description: "A summary of the best practices for summarizing output of reproducible scientific documents."
+  author:
+    - name: Elmer Edison Achalma Mendoza
+      url: https://achalmaedison.netlify.app/
+      affiliation: Universidad Ncional de San Cristóbal de Huamanga
+      affiliation-url: https://www.gob.pe/unsch
+  date: "8/1/2023"
+  search: true
+  repo-url: https://github.com/jjallaire/hopr/
+  repo-branch: main
+  repo-actions: [edit, issue, source]
+  downloads: [pdf, epub]
+  sharing: [twitter, facebook]
+  
+  page-footer:
+    left: |
+      R for Data Science (2e) was written by Hadley Wickham, Mine
+      Çetinkaya-Rundel, and Garrett Grolemund.
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
+      
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    
+    - part: capitulos.qmd
+      chapters:
+        - capitulo1.qmd
+        - capitulo2.qmd
+        - capitulo3.qmd
+        - capitulo4.qmd
+        - capitulo5.qmd
+        - capitulo6.qmd
+        - capitulo7.qmd
+        
+    - references.qmd
+    
+  appendices:
+    - apendice.qmd
+
+  page-navigation: true
+    
+comments:
+  hypothesis: true
+  
+bibliography: references.bib
+citation: true
+csl: apa-6th-edition.csl
+cite-method: biblatex
+
+links-as-notes: true
+lang: es 
+crossref:
+  fig-title: Figura    # (default is "Figure")
+  tbl-title: Tabla     # (default is "Table")
+  title-delim: —       # (default is ":")
+  fig-prefix: figura   # (default is "Figure")
+  tbl-prefix: tabla    # (default is "Table")
+  ref-hyperlink: false # (default is true)
+execute:
+  eval: true
+  echo: true
+  output: true 
+  warning: false
+
+highlight-style: github
+
+format:
+  html:
+    theme: cosmo
+    code-copy: true
+  pdf:
+    documentclass: scrreprt
+    include-in-header: preamble.tex
+    keep-tex: true
+
+editor: visual
+
