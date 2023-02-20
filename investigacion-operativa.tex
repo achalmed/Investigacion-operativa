@@ -9,7 +9,7 @@
   numbers=noendperiod]{scrreprt}
 
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
+\usepackage[]{libertinus}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -242,8 +242,8 @@
 % Make links footnotes instead of hotlinks:
 \DeclareRobustCommand{\href}[2]{#2\footnote{\url{#1}}}
 \hypersetup{
-  pdftitle={investigacion operativa},
-  pdfauthor={Edison Achalma},
+  pdftitle={Investigacion operativa},
+  pdfauthor={Elmer Edison Achalma Mendoza},
   pdflang={es},
   colorlinks=true,
   linkcolor={blue},
@@ -252,13 +252,13 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
-\title{investigacion operativa}
-\author{Edison Achalma}
+\title{Investigacion operativa}
+\author{Elmer Edison Achalma Mendoza}
 \date{1/8/23}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, frame hidden, enhanced, sharp corners, interior hidden, breakable]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, frame hidden, sharp corners, enhanced, borderline west={3pt}{0pt}{shadecolor}, breakable, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Tabla de contenidos}
 {
@@ -354,6 +354,8 @@ In summary, this book has no content whatsoever.
 \hypertarget{introducciuxf3n-a-la-investigaciuxf3n-operativa}{%
 \chapter{Introducción a la investigación
 operativa}\label{introducciuxf3n-a-la-investigaciuxf3n-operativa}}
+
+\#io \#book
 
 \leavevmode\vadjust pre{\hypertarget{def-io}{}}%
 \begin{definition}[Investigacion de operaciones]\label{def-io}
@@ -653,14 +655,6 @@ clásicos}\label{algunos-casos-de-estudios-cluxe1sicos}}
 \section{Método Gráfico}\label{muxe9todo-gruxe1fico}}
 
 problema en forma estándar
-
-\begin{align}
-& \text{Maximizar Z} & & 50x_1 + 56x_2 \\
-& \text{Sujeto a}    & & x_1 + x_2 \leq 80 \\
-&                    & & 3x_1 + 2x_2 \leq 220 \\
-&                    & & 2x_1 + 3x_2 \leq 210 \\
-&                    & & x_1, x_2 \geq 0
-\end{align}
 
 Representar gráficamente las restricciones
 

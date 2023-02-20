@@ -88,7 +88,7 @@
     "href": "capitulo2.html#método-gráfico",
     "title": "2  Optmización lineal contínua",
     "section": "2.7 Método Gráfico",
-    "text": "2.7 Método Gráfico\nproblema en forma estándar\n\\[\\begin{align}\n& \\text{Maximizar Z} & & 50x_1 + 56x_2 \\\\\n& \\text{Sujeto a}    & & x_1 + x_2 \\leq 80 \\\\\n&                    & & 3x_1 + 2x_2 \\leq 220 \\\\\n&                    & & 2x_1 + 3x_2 \\leq 210 \\\\\n&                    & & x_1, x_2 \\geq 0\n\\end{align}\\]\nRepresentar gráficamente las restricciones\nIdentificar el conjunto solución factible.\nIdentificar los puntos extremos del conjunto solución factible.\n\n2.7.1 Casos Especiales del Método Gráfico"
+    "text": "2.7 Método Gráfico\nproblema en forma estándar\nRepresentar gráficamente las restricciones\nIdentificar el conjunto solución factible.\nIdentificar los puntos extremos del conjunto solución factible.\n\n2.7.1 Casos Especiales del Método Gráfico"
   },
   {
     "objectID": "capitulo2.html#ejercicios-de-aplicación",

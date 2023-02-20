@@ -22,15 +22,7 @@ El modelo general de Programación Lineal (PL) puede ser representado de la sigu
 
 problema en forma estándar
 
-```{=tex}
-\begin{align}
-& \text{Maximizar Z} & & 50x_1 + 56x_2 \\
-& \text{Sujeto a}    & & x_1 + x_2 \leq 80 \\
-&                    & & 3x_1 + 2x_2 \leq 220 \\
-&                    & & 2x_1 + 3x_2 \leq 210 \\
-&                    & & x_1, x_2 \geq 0
-\end{align}
-```
+
 Representar gráficamente las restricciones
 
 ```{=latex}
@@ -50,7 +42,6 @@ Representar gráficamente las restricciones
 \end{axis}
 \end{tikzpicture}
 ```
-
 Identificar el conjunto solución factible.
 
 ```{=latex}
@@ -75,7 +66,6 @@ Identificar el conjunto solución factible.
 \end{tikzpicture}
 ```
 
-
 Identificar los puntos extremos del conjunto solución factible.
 
 ```{=latex}
@@ -95,9 +85,9 @@ Identificar los puntos extremos del conjunto solución factible.
 \filldraw[black] (60,80) circle (2pt);
 \end{axis}
 \end{tikzpicture}
-
 ```
-
 ### Casos Especiales del Método Gráfico
+
+
 
 ## Ejercicios de aplicación

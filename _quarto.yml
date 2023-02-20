@@ -12,11 +12,14 @@ book:
       affiliation-url: https://www.gob.pe/unsch
   date: "8/1/2023"
   search: true
-  repo-url: https://github.com/jjallaire/hopr/
+  repo-url: https://github.com/achalmed/Investigacion-operativa
   repo-branch: main
   repo-actions: [edit, issue, source]
   downloads: [pdf, epub]
   sharing: [twitter, facebook]
+  cover-image: cover.png
+  cover-image-alt: |
+   Alternative text describing the book cover 
   
   page-footer:
     left: |
@@ -73,13 +76,15 @@ execute:
 highlight-style: github
 
 format:
+  #pdf:
+    #documentclass: scrreprt
+    #include-in-header: preamble.tex
+    #fontfamily: libertinus
+    #keep-tex: true
   html:
     theme: cosmo
     code-copy: true
-  pdf:
-    documentclass: scrreprt
-    include-in-header: preamble.tex
-    keep-tex: true
+    keep-md: true
 
 editor: visual
 

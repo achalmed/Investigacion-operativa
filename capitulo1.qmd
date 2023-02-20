@@ -1,5 +1,7 @@
 # Introducción a la investigación operativa
 
+#io #book
+
 ::: {#def-io}
 ## Investigacion de operaciones
 
