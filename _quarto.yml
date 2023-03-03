@@ -3,12 +3,12 @@ project:
   output-dir: _book
 
 book:
-  title: "Investigacion operativa"
-  description: "A summary of the best practices for summarizing output of reproducible scientific documents."
+  title: "Investigación operativa"
+  description: "Libro de Investigación operativa."
   author:
     - name: Elmer Edison Achalma Mendoza
       url: https://achalmaedison.netlify.app/
-      affiliation: Universidad Ncional de San Cristóbal de Huamanga
+      affiliation: Universidad Nacional de San Cristóbal de Huamanga
       affiliation-url: https://www.gob.pe/unsch
   date: "8/1/2023"
   search: true
@@ -20,7 +20,7 @@ book:
   cover-image: cover.png
   cover-image-alt: |
    Alternative text describing the book cover 
-  
+   
   page-footer:
     left: |
       R for Data Science (2e) was written by Hadley Wickham, Mine
