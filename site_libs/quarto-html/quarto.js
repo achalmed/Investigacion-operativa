@@ -46,7 +46,7 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
   const removeAllActive = () =>
     [...Array(tocLinks.length).keys()].forEach((link) => removeActive(link));
 
-  // activate the anchor for a section associated with this TOC entry 
+  // activate the anchor for a section associated with this TOC entry
   tocLinks.forEach((link) => {
     link.addEventListener("click", () => {
       if (link.href.indexOf("#") !== -1) {
