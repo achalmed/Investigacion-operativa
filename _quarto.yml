@@ -10,7 +10,7 @@ book:
       url: https://achalmaedison.netlify.app/
       affiliation: Universidad Nacional de San Cristóbal de Huamanga
       affiliation-url: https://www.gob.pe/unsch
-  date: "8/1/2023"
+  date: "01/08/2023"
   search: true
   repo-url: https://github.com/achalmed/Investigacion-operativa
   repo-branch: main
@@ -35,7 +35,7 @@ book:
     
     - part: capitulos.qmd
       chapters:
-        - capitulo1.qmd
+        - capitulo1/capitulo1.qmd
         - capitulo2.qmd
         - capitulo3.qmd
         - capitulo4.qmd
@@ -76,11 +76,11 @@ execute:
 highlight-style: github
 
 format:
-  #pdf:
-    #documentclass: scrreprt
-    #include-in-header: preamble.tex
-    #fontfamily: libertinus
-    #keep-tex: true
+  pdf:
+    documentclass: scrreprt
+    include-in-header: preamble.tex
+    fontfamily: libertinus
+    keep-tex: true
   html:
     theme: cosmo
     code-copy: true
